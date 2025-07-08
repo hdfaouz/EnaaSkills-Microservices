@@ -26,3 +26,6 @@ Tableau de bord de suivi par apprenant
 
 Édition et suppression des compétences
 
+----------------------------------------------------------------------------------------
+## UML
+![Diagramme](Diagrammes/Diagramme%20de%20Classe.png)
