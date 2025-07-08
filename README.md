@@ -28,4 +28,7 @@ Tableau de bord de suivi par apprenant
 
 ----------------------------------------------------------------------------------------
 ## UML
+**_Diagramme de Classe_**
 ![Diagramme](Diagrammes/Diagramme%20de%20Classe.png)
+**_Diagramme de cas d'utilisation_**
+![Diagramme](Diagrammes/Diagramme%20de%20cas%20d'utilisation.png)
