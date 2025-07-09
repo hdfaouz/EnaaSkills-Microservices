@@ -2,10 +2,9 @@ package com.enaa.breif.Controller;
 
 import com.enaa.breif.Dto.BreifDto;
 import com.enaa.breif.Service.BreifService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/breif")
@@ -20,5 +19,9 @@ public class BreifController {
     @PostMapping
     public BreifDto ajouterBreif(@RequestBody BreifDto breifDto){
         return breifService.ajouterBreif(breifDto);
+    }
+    @GetMapping
+    public List<BreifDto> getAll(){
+        return breifService.getAll();
     }
 }

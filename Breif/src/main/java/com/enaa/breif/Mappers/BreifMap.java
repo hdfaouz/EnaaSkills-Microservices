@@ -13,5 +13,5 @@ public interface BreifMap {
 
     BreifDto toDto (Breif breif);
 
-    List<BreifDto> toDtos (Breif breif);
+    List<BreifDto> toDtos (List<Breif> breif);
 }

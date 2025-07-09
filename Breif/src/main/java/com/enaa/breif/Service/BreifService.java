@@ -6,6 +6,8 @@ import com.enaa.breif.Model.Breif;
 import com.enaa.breif.Repository.BreifRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class BreifService {
 
@@ -22,4 +24,14 @@ public class BreifService {
         Breif saveBreif = breifRepository.save(breif);
         return breifMap.toDto(saveBreif);
     }
+
+    public List<BreifDto> getAll(){
+         List<Breif> breifs = breifRepository.findAll();
+        return breifMap.toDtos(breifs);
+    }
+
+
+
+
+
 }
