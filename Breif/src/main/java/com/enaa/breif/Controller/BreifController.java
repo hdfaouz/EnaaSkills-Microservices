@@ -28,4 +28,9 @@ public class BreifController {
     public BreifDto update(@PathVariable Long id, @RequestBody BreifDto breifDto){
         return breifService.updat(id,breifDto);
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
+        breifService.delete(id);
+    }
 }

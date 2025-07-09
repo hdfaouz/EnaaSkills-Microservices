@@ -43,6 +43,10 @@ public class BreifService {
         return breifMap.toDto(savedBreif);
     }
 
+    public void delete(Long id){
+        breifRepository.deleteById(id);
+    }
+
 
 
 
