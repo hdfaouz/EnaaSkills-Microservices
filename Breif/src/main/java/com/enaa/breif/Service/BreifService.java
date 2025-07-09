@@ -30,6 +30,19 @@ public class BreifService {
         return breifMap.toDtos(breifs);
     }
 
+    public BreifDto updat(long id, BreifDto breifDto){
+        Breif breif = breifRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("Breif not found"));
+
+        breif.setTitre(breifDto.getTitre());
+        breif.setDateDepart(breifDto.getDateDepart());
+        breif.setDateFin(breifDto.getDateFin());
+
+        Breif savedBreif = breifRepository.save(breif);
+
+        return breifMap.toDto(savedBreif);
+    }
+
 
 
 

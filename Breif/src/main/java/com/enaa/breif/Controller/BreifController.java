@@ -24,4 +24,8 @@ public class BreifController {
     public List<BreifDto> getAll(){
         return breifService.getAll();
     }
+    @PutMapping("/{id}")
+    public BreifDto update(@PathVariable Long id, @RequestBody BreifDto breifDto){
+        return breifService.updat(id,breifDto);
+    }
 }
