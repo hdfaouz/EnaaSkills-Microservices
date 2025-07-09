@@ -31,6 +31,20 @@ public class ApprenantService {
         return apprenantMap.toDtos(apprenants);
     }
 
+    public ApprenantDto update(Long id, ApprenantDto apprenantDto){
+        Apprenant apprenant = apprenantRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("apprenant not found"));
+
+        apprenant.setNom(apprenantDto.getNom());
+        apprenant.setPrenom(apprenantDto.getPrenom());
+        apprenant.setEmail(apprenantDto.getEmail());
+
+
+        Apprenant savedApprenant = apprenantRepository.save(apprenant);
+
+        return apprenantMap.toDto(savedApprenant);
+    }
+
 
 
 }

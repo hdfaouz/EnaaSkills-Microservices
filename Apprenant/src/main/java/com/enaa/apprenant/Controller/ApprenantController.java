@@ -25,4 +25,9 @@ public class ApprenantController {
     public List<ApprenantDto> getAll(){
         return apprenantService.getAll();
     }
+
+    @PutMapping("/{id}")
+    public ApprenantDto update(@PathVariable Long id, @RequestBody ApprenantDto apprenantDto){
+        return apprenantService.update(id,apprenantDto);
+    }
 }
