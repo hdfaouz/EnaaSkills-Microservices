@@ -45,6 +45,10 @@ public class ApprenantService {
         return apprenantMap.toDto(savedApprenant);
     }
 
+    public void delete(Long id){
+        apprenantRepository.deleteById(id);
+    }
+
 
 
 }

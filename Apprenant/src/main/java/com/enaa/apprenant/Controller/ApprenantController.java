@@ -30,4 +30,9 @@ public class ApprenantController {
     public ApprenantDto update(@PathVariable Long id, @RequestBody ApprenantDto apprenantDto){
         return apprenantService.update(id,apprenantDto);
     }
+
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id){
+        apprenantService.delete(id);
+    }
 }
