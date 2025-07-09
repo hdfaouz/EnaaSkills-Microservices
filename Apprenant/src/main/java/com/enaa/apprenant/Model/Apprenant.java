@@ -1,15 +1,29 @@
-package com.enaa.apprenant.Dto;
+package com.enaa.apprenant.Model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class ApprenantDto {
-
+public class Apprenant {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
+    private Long id;
     private String nom;
     private String prenom;
     private String email;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getNom() {
         return nom;
