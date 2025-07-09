@@ -7,6 +7,8 @@ import com.enaa.apprenant.Repositories.ApprenantRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ApprenantService {
 
@@ -24,6 +26,10 @@ public class ApprenantService {
         return apprenantMap.toDto(saveApprenant);
     }
 
+    public List<ApprenantDto> getAll(){
+        List<Apprenant> apprenants = apprenantRepository.findAll();
+        return apprenantMap.toDtos(apprenants);
+    }
 
 
 

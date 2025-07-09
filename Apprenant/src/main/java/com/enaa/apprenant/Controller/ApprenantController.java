@@ -2,10 +2,9 @@ package com.enaa.apprenant.Controller;
 
 import com.enaa.apprenant.Dto.ApprenantDto;
 import com.enaa.apprenant.Service.ApprenantService;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/apprenant")
@@ -20,5 +19,10 @@ public class ApprenantController {
     @PostMapping
     public ApprenantDto ajouterApprenant(@RequestBody ApprenantDto apprenantDto){
         return apprenantService.ajouterApprenant(apprenantDto);
+    }
+
+    @GetMapping
+    public List<ApprenantDto> getAll(){
+        return apprenantService.getAll();
     }
 }
