@@ -5,14 +5,19 @@ import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class RenduDto {
 
     private Date DateDepot;
     private String contenu;
-    private Long idApprenant;
-    private Long idBreif;
+
+    public RenduDto(Date dateDepot, String contenu) {
+        DateDepot = dateDepot;
+        this.contenu = contenu;
+    }
+
+    public RenduDto() {
+    }
 
     public Date getDateDepot() {
         return DateDepot;
@@ -30,19 +35,4 @@ public class RenduDto {
         this.contenu = contenu;
     }
 
-    public Long getIdApprenant() {
-        return idApprenant;
-    }
-
-    public void setIdApprenant(Long idApprenant) {
-        this.idApprenant = idApprenant;
-    }
-
-    public Long getIdBreif() {
-        return idBreif;
-    }
-
-    public void setIdBreif(Long idBreif) {
-        this.idBreif = idBreif;
-    }
 }

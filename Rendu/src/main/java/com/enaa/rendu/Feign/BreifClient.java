@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "breif", url = "http://localhost:8082")
+@FeignClient(name = "Breif", url = "http://localhost:8082")
 public interface BreifClient {
     @GetMapping("/getById/{id}")
     BreifDto getBriefById(@PathVariable("id") Long idBreif);
