@@ -29,4 +29,16 @@ public class CompetenceService {
         List<Competence> competences = competenceRepository.findAll();
        return competenceMap.toDTOs(competences);
     }
+
+    public CompetenceDto update(Long id, CompetenceDto competenceDto){
+        Competence competence = competenceRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("competence not found"));
+
+        competence.setTitre(competenceDto.getTitre());
+        competence.isStatutValidation(competenceDto.isStatutValidation());
+
+        Competence savedCompetence = competenceRepository.save(competence);
+
+        return competenceMap.toDTO(savedCompetence);
+    }
 }

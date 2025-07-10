@@ -32,8 +32,8 @@ public class Competence {
         this.titre = titre;
     }
 
-    public boolean isStatutValidation() {
-        return statutValidation;
+    public boolean isStatutValidation(boolean statutValidation) {
+        return this.statutValidation;
     }
 
     public void setStatutValidation(boolean statutValidation) {
