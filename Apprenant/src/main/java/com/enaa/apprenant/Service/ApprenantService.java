@@ -48,6 +48,11 @@ public class ApprenantService {
     public void delete(Long id){
         apprenantRepository.deleteById(id);
     }
+    public ApprenantDto getById(Long id){
+        Apprenant foundApprenant =apprenantRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("apprenant not found"));
+        return apprenantMap.toDto(foundApprenant);
+    }
 
 
 

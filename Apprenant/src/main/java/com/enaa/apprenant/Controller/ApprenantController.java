@@ -35,4 +35,10 @@ public class ApprenantController {
     public void delete(@PathVariable Long id){
         apprenantService.delete(id);
     }
+
+    @GetMapping("/getById/{id}")
+    public ApprenantDto getById(@PathVariable Long id){
+
+        return apprenantService.getById(id);
+    }
 }
