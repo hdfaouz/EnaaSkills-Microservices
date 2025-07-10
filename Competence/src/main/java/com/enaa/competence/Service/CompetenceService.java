@@ -6,6 +6,8 @@ import com.enaa.competence.Model.Competence;
 import com.enaa.competence.Repository.CompetenceRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class CompetenceService {
 
@@ -21,5 +23,10 @@ public class CompetenceService {
         Competence competence = competenceMap.toEntity(competenceDto);
         Competence saveCompetence = competenceRepository.save(competence);
         return competenceMap.toDTO(saveCompetence);
+    }
+
+    public List<CompetenceDto> getAllCompetences(){
+        List<Competence> competences = competenceRepository.findAll();
+       return competenceMap.toDTOs(competences);
     }
 }
