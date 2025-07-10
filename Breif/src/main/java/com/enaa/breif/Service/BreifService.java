@@ -47,6 +47,12 @@ public class BreifService {
         breifRepository.deleteById(id);
     }
 
+    public BreifDto getById(Long id){
+        Breif foundBreif =breifRepository.findById(id)
+                .orElseThrow(()-> new RuntimeException("Breif not found"));
+        return breifMap.toDto(foundBreif);
+    }
+
 
 
 

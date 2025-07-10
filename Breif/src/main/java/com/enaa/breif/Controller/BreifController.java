@@ -33,4 +33,9 @@ public class BreifController {
     public void delete(@PathVariable Long id){
         breifService.delete(id);
     }
+
+    @GetMapping("/getById/{id}")
+    public BreifDto getById(@PathVariable Long id){
+        return breifService.getById(id);
+    }
 }
