@@ -41,4 +41,9 @@ public class CompetenceService {
 
         return competenceMap.toDTO(savedCompetence);
     }
+
+    public void supprimerCompetence(Long id){
+
+        competenceRepository.deleteById(id);
+    }
 }
