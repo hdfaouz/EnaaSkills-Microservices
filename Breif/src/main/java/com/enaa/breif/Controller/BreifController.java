@@ -22,7 +22,7 @@ public class BreifController {
     }
     @GetMapping
     public List<BreifDto> getAll(){
-        return breifService.getAll();
+        return breifService.getAllBreifs();
     }
     @PutMapping("/{id}")
     public BreifDto update(@PathVariable Long id, @RequestBody BreifDto breifDto){
@@ -36,6 +36,6 @@ public class BreifController {
 
     @GetMapping("/getById/{id}")
     public BreifDto getById(@PathVariable Long id){
-        return breifService.getById(id);
+        return breifService.getBreifById(id);
     }
 }

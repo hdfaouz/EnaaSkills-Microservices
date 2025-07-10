@@ -26,7 +26,7 @@ public class ApprenantService {
         return apprenantMap.toDto(saveApprenant);
     }
 
-    public List<ApprenantDto> getAll(){
+    public List<ApprenantDto> getAllApprenants(){
         List<Apprenant> apprenants = apprenantRepository.findAll();
         return apprenantMap.toDtos(apprenants);
     }
@@ -48,7 +48,7 @@ public class ApprenantService {
     public void delete(Long id){
         apprenantRepository.deleteById(id);
     }
-    public ApprenantDto getById(Long id){
+    public ApprenantDto getApprenantById(Long id){
         Apprenant foundApprenant =apprenantRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("apprenant not found"));
         return apprenantMap.toDto(foundApprenant);

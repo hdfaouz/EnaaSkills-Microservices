@@ -23,7 +23,7 @@ public class ApprenantController {
 
     @GetMapping
     public List<ApprenantDto> getAll(){
-        return apprenantService.getAll();
+        return apprenantService.getAllApprenants();
     }
 
     @PutMapping("/{id}")
@@ -39,6 +39,6 @@ public class ApprenantController {
     @GetMapping("/getById/{id}")
     public ApprenantDto getById(@PathVariable Long id){
 
-        return apprenantService.getById(id);
+        return apprenantService.getApprenantById(id);
     }
 }

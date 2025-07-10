@@ -25,7 +25,7 @@ public class BreifService {
         return breifMap.toDto(saveBreif);
     }
 
-    public List<BreifDto> getAll(){
+    public List<BreifDto> getAllBreifs(){
          List<Breif> breifs = breifRepository.findAll();
         return breifMap.toDtos(breifs);
     }
@@ -47,7 +47,7 @@ public class BreifService {
         breifRepository.deleteById(id);
     }
 
-    public BreifDto getById(Long id){
+    public BreifDto getBreifById(Long id){
         Breif foundBreif =breifRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("Breif not found"));
         return breifMap.toDto(foundBreif);
