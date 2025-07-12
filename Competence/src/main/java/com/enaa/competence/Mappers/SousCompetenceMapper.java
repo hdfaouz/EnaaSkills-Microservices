@@ -1,7 +1,9 @@
 package com.enaa.competence.Mappers;
 
 import com.enaa.competence.Dto.CompetenceDto;
+import com.enaa.competence.Dto.SousCompetenceDto;
 import com.enaa.competence.Model.Competence;
+import com.enaa.competence.Model.SousCompetence;
 import org.mapstruct.Mapper;
 
 import java.util.List;
@@ -9,9 +11,9 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface SousCompetenceMapper {
 
-    Competence toEntity(CompetenceDto dto);
+    SousCompetence toEntity(SousCompetenceDto dto);
 
-    CompetenceDto toDto(Competence competence);
+    SousCompetenceDto toDto(SousCompetence competence);
 
-    List<CompetenceDto> toDtod(List<Competence> competences);
+    List<SousCompetenceDto> toDtos(List<SousCompetence> competences);
 }
