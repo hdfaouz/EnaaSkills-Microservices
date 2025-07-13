@@ -13,6 +13,8 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @NoArgsConstructor
 @AllArgsConstructor
@@ -34,7 +36,7 @@ public class RenduService {
         }
 
         // Vérifier que le brief existe
-        BreifDto brief = breifClient.getBriefById(renduDto.getIdBrief());
+        BreifDto brief = breifClient.getBriefById(renduDto.getIdBreif());
         if (brief == null) {
             throw new RuntimeException("Brief not found");
         }
@@ -42,6 +44,11 @@ public class RenduService {
         Rendu rendu = renduMap.toEntity(renduDto);
         Rendu savedRendu = renduRepository.save(rendu);
         return renduMap.toDto(savedRendu);
+    }
+
+    public List<RenduDto> getAllRendu(){
+        List<Rendu> rendus = renduRepository.findAll();
+        return renduMap.toDtos(rendus);
     }
 
 
