@@ -26,6 +26,11 @@ public class SousCompetenceService {
         return sousCompetenceMapper.toDto(saved);
     }
 
+    public List<SousCompetenceDto> getAll(){
+        List<SousCompetence> sousCompetences = sousComptenceRepository.findAll();
+        return sousCompetenceMapper.toDtos(sousCompetences);
+    }
+
     public void delete(Long sousCompetenceId){sousComptenceRepository.deleteById(sousCompetenceId);}
 
     public SousCompetenceDto update(SousCompetenceDto dto,Long sousCompetenceId){
@@ -39,9 +44,6 @@ public class SousCompetenceService {
 
     }
 
-    public List<SousCompetenceDto> getAll(){
-        List<SousCompetence> sousCompetences = sousComptenceRepository.findAll();
-        return sousCompetenceMapper.toDtos(sousCompetences);
-    }
+
 
 }
