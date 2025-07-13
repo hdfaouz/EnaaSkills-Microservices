@@ -2,7 +2,10 @@ package com.enaa.rendu.Controlleur;
 
 import com.enaa.rendu.Dto.RenduDto;
 import com.enaa.rendu.Service.RenduService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/rendu")
@@ -15,7 +18,7 @@ public class RenduControlller {
     }
 
     @GetMapping
-    public RenduDto ajouterRendu(@RequestBody RenduDto renduDto, @PathVariable Long idApprenant){
-        return renduService.ajouterRendu(renduDto,idApprenant);
+    public RenduDto ajouterRendu(@RequestBody RenduDto renduDto){
+        return renduService.ajouterRendu(renduDto);
     }
 }

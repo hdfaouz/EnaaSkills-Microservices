@@ -1,7 +1,6 @@
 package com.enaa.rendu.Service;
 
 import com.enaa.apprenant.Dto.ApprenantDto;
-import com.enaa.apprenant.Model.Apprenant;
 import com.enaa.breif.Dto.BreifDto;
 import com.enaa.rendu.Dto.RenduDto;
 import com.enaa.rendu.Feign.ApprenantClient;
@@ -27,15 +26,15 @@ public class RenduService {
 
     private BreifClient breifClient;
 
-    public RenduDto ajouterRendu(RenduDto renduDto, Long idApprenant, Long idBreif) {
+    public RenduDto ajouterRendu(RenduDto renduDto) {
         // Vérifier que l'apprenant existe
-        ApprenantDto apprenant = apprenantClient.getApprenantById(idApprenant);
+        ApprenantDto apprenant = apprenantClient.getApprenantById(renduDto.getIdApprenant());
         if (apprenant == null) {
             throw new RuntimeException("Apprenant not found");
         }
 
         // Vérifier que le brief existe
-        BreifDto brief = breifClient.getBriefById(idBreif);
+        BreifDto brief = breifClient.getBriefById(renduDto.getIdBrief());
         if (brief == null) {
             throw new RuntimeException("Brief not found");
         }
