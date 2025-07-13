@@ -14,6 +14,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -62,6 +64,45 @@ public class SousCompetenceTest {
         assertNotNull(result);
         assertEquals(expectedDto.getSousCompetenceNom(), result.getSousCompetenceNom());
         assertEquals(expectedDto.getSousCompetenceStatus(), result.getSousCompetenceStatus());
+
+    }
+
+    @Test
+    void testGetAll() {
+
+        SousCompetence sousCompetence1 = new SousCompetence();
+        sousCompetence1.setSousCompetenceNom("Algorithmes Java");
+        sousCompetence1.setSousCompetenceStatus(Status.VALIDE);
+
+        SousCompetence sousCompetence2 = new SousCompetence();
+        sousCompetence2.setSousCompetenceNom("Design Patterns");
+        sousCompetence2.setSousCompetenceStatus(Status.VALIDE);
+
+        List<SousCompetence> sousCompetences = Arrays.asList(sousCompetence1, sousCompetence2);
+
+        SousCompetenceDto sousCompetenceDto1 = new SousCompetenceDto();
+        sousCompetenceDto1.setSousCompetenceNom("Algorithmes Java");
+        sousCompetenceDto1.setSousCompetenceStatus(Status.NON_VALIDE);
+
+        SousCompetenceDto sousCompetenceDto2 = new SousCompetenceDto();
+        sousCompetenceDto2.setSousCompetenceNom("Design Patterns");
+        sousCompetenceDto2.setSousCompetenceStatus(Status.VALIDE);
+
+        List<SousCompetenceDto> expectedDtos = Arrays.asList(sousCompetenceDto1, sousCompetenceDto2);
+
+        when(sousComptenceRepository.findAll()).thenReturn(sousCompetences);
+        when(sousCompetenceMapper.toDtos(sousCompetences)).thenReturn(expectedDtos);
+
+
+        List<SousCompetenceDto> result = sousCompetenceService.getAll();
+
+
+        assertNotNull(result);
+        assertEquals(2, result.size());
+        assertEquals("Algorithmes Java", result.get(0).getSousCompetenceNom());
+        assertEquals("Design Patterns", result.get(1).getSousCompetenceNom());
+        assertEquals(Status.NON_VALIDE, result.get(0).getSousCompetenceStatus());
+
 
     }
 }
