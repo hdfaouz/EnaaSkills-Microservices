@@ -11,6 +11,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
+import java.util.Arrays;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
@@ -65,4 +68,51 @@ public class ApprenantTest {
         assertEquals("Jean", result.getPrenom());
         assertEquals("jean.dupont@email.com", result.getEmail());
     }
+    @Test
+    void getAllApprenants() {
+        // Données de test
+        Apprenant apprenant1 = new Apprenant();
+        apprenant1.setId(1L);
+        apprenant1.setNom("Dupont");
+        apprenant1.setPrenom("Jean");
+        apprenant1.setEmail("jean.dupont@email.com");
+
+        Apprenant apprenant2 = new Apprenant();
+        apprenant2.setId(2L);
+        apprenant2.setNom("Martin");
+        apprenant2.setPrenom("Marie");
+        apprenant2.setEmail("marie.martin@email.com");
+
+        List<Apprenant> apprenants = Arrays.asList(apprenant1, apprenant2);
+
+        ApprenantDto dto1 = new ApprenantDto();
+        dto1.setNom("Dupont");
+        dto1.setPrenom("Jean");
+        dto1.setEmail("jean.dupont@email.com");
+
+        ApprenantDto dto2 = new ApprenantDto();
+        dto2.setNom("Martin");
+        dto2.setPrenom("Marie");
+        dto2.setEmail("marie.martin@email.com");
+
+        List<ApprenantDto> expectedDtos = Arrays.asList(dto1, dto2);
+
+        // Configuration des mocks
+        when(apprenantRepository.findAll()).thenReturn(apprenants);
+        when(apprenantMap.toDtos(apprenants)).thenReturn(expectedDtos);
+
+        // Exécution
+        List<ApprenantDto> result = apprenantService.getAllApprenants();
+
+        // Vérifications
+        assertNotNull(result);
+        assertEquals("Dupont", result.get(0).getNom());
+        assertEquals("Jean", result.get(0).getPrenom());
+        assertEquals("jean.dupont@email.com", result.get(0).getEmail());
+        assertEquals("Martin", result.get(1).getNom());
+        assertEquals("Marie", result.get(1).getPrenom());
+        assertEquals("marie.martin@email.com", result.get(1).getEmail());
+    }
+
+
 }
