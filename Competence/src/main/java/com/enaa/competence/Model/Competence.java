@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
@@ -14,6 +16,9 @@ public class Competence {
         private Long id;
         private String titre;
         private boolean statutValidation;
+
+    @OneToMany(mappedBy = "competence", cascade = CascadeType.ALL)
+    private List<SousCompetence> sousCompetences;
 
 
     public Long getId() {
@@ -40,5 +45,15 @@ public class Competence {
         this.statutValidation = statutValidation;
     }
 
+    public boolean isStatutValidation() {
+        return statutValidation;
+    }
 
+    public List<SousCompetence> getSousCompetences() {
+        return sousCompetences;
+    }
+
+    public void setSousCompetences(List<SousCompetence> sousCompetences) {
+        this.sousCompetences = sousCompetences;
+    }
 }
