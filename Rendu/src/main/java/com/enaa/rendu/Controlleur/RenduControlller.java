@@ -25,4 +25,9 @@ public class RenduControlller {
     public List<RenduDto> getAll(){
         return renduService.getAllRendu();
     }
+
+    @DeleteMapping("/{id}")
+    public void deleteRendu(@PathVariable Long id){
+        renduService.deleteRendu(id);
+    }
 }

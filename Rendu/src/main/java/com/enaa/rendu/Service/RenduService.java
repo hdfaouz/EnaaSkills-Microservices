@@ -51,6 +51,10 @@ public class RenduService {
         return renduMap.toDtos(rendus);
     }
 
+    public void deleteRendu(Long id){
+        renduRepository.deleteById(id);
+    }
+
 
 
 }
