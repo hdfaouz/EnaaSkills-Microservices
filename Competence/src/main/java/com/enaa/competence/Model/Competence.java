@@ -39,4 +39,6 @@ public class Competence {
     public void setStatutValidation(boolean statutValidation) {
         this.statutValidation = statutValidation;
     }
+
+
 }
