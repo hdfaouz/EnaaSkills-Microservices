@@ -7,9 +7,18 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class ApprenantDto {
 
+    private Long idApprenant;
     private String nom;
     private String prenom;
     private String email;
+
+    public Long getIdApprenant() {
+        return idApprenant;
+    }
+
+    public void setIdApprenant(Long idApprenant) {
+        this.idApprenant = idApprenant;
+    }
 
     public String getNom() {
         return nom;

@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Rendu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,15 +16,8 @@ public class Rendu {
     private Long id;
     private Date DateDepot;
     private String contenu;
-
-    public Rendu() {
-    }
-
-    public Rendu(Long id, Date dateDepot, String contenu) {
-        this.id = id;
-        DateDepot = dateDepot;
-        this.contenu = contenu;
-    }
+    private Long idApprenant;
+    private Long idBreif;
 
     public Date getDateDepot() {
         return DateDepot;
@@ -48,4 +43,19 @@ public class Rendu {
         this.id = id;
     }
 
+    public Long getIdApprenant() {
+        return idApprenant;
+    }
+
+    public void setIdApprenant(Long idApprenant) {
+        this.idApprenant = idApprenant;
+    }
+
+    public Long getIdBreif() {
+        return idBreif;
+    }
+
+    public void setIdBreif(Long idBreif) {
+        this.idBreif = idBreif;
+    }
 }

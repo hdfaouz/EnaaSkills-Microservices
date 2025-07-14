@@ -1,11 +1,12 @@
 package com.enaa.competence.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class SousCompetence {
 
    @Id
@@ -15,14 +16,9 @@ public class SousCompetence {
    private String sousCompetenceNom;
    private Status sousCompetenceStatus;
 
-    public SousCompetence(Long sousCompetenceId, String sousCompetenceNom, Status sousCompetenceStatus) {
-        this.sousCompetenceId = sousCompetenceId;
-        this.sousCompetenceNom = sousCompetenceNom;
-        this.sousCompetenceStatus = sousCompetenceStatus;
-    }
-
-    public SousCompetence() {
-    }
+    @ManyToOne
+    @JoinColumn(name = "competence_id")
+    private Competence competence;
 
     public Long getSousCompetenceId() {
         return sousCompetenceId;
@@ -46,5 +42,13 @@ public class SousCompetence {
 
     public void setSousCompetenceStatus(Status sousCompetenceStatus) {
         this.sousCompetenceStatus = sousCompetenceStatus;
+    }
+
+    public Competence getCompetence() {
+        return competence;
+    }
+
+    public void setCompetence(Competence competence) {
+        this.competence = competence;
     }
 }
