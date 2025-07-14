@@ -1,19 +1,22 @@
 package com.enaa.rendu.Feign;
-
-import com.enaa.apprenant.Dto.ApprenantDto;
 import com.enaa.breif.Dto.BreifDto;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @FeignClient(name = "Breif", url = "http://localhost:8082")
 public interface BreifClient {
-    @GetMapping("/getById/{id}")
-    BreifDto getBriefById(@PathVariable("id") Long idBreif);
+    @PostMapping("/brief")
+     BreifDto ajouterBrief(@RequestBody BreifDto breifDto);
+    @GetMapping
+     List<BreifDto> getAllBreifs();
+    @PutMapping("/brief/{id}")
+    BreifDto updateBrief(@PathVariable Long id, @RequestBody BreifDto breifDto) ;
+    @DeleteMapping("/brief{id}")
+    void deleteBrief(@PathVariable Long id) ;
 
-    @GetMapping("/brief")
-    List<BreifDto> getAllBriefs();
+    @GetMapping("/brief/{id}")
+    BreifDto getBriefById(@PathVariable Long id);
 
 }

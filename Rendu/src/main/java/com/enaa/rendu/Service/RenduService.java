@@ -8,47 +8,46 @@ import com.enaa.rendu.Feign.BreifClient;
 import com.enaa.rendu.Mappers.RenduMap;
 import com.enaa.rendu.Model.Rendu;
 import com.enaa.rendu.Repository.RenduRepository;
-import feign.FeignException;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
+@NoArgsConstructor
+@AllArgsConstructor
 public class RenduService {
 
-    private final ApprenantClient apprenantClient;
+    private  ApprenantClient apprenantClient;
 
-    private final RenduRepository renduRepository;
+    private RenduRepository renduRepository;
 
-    private final   RenduMap renduMap;
+    private  RenduMap renduMap;
 
     private BreifClient breifClient;
-    public RenduDto save(RenduDto renduDTO) {
-        try {
-            ApprenantDto apprenant = apprenantClient.getApprenantById(renduDTO.getIdApprenant());
-        } catch (FeignException.NotFound e) {
-            throw new RuntimeException("Apprenant non trouvé avec l'ID : " + renduDTO.getIdApprenant());
+
+    public RenduDto ajouterRendu(RenduDto renduDto) {
+        // Vérifier que l'apprenant existe
+        ApprenantDto apprenant = apprenantClient.getApprenantById(renduDto.getIdApprenant());
+        if (apprenant == null) {
+            throw new RuntimeException("Apprenant not found");
         }
 
-//        try {
-//            CompetenceDto competenceDto = competenceClient.getCompetenceById(renduDTO.getIdCompetence());
-//        } catch (FeignException.NotFound e) {
-//            throw new RuntimeException("competence non trouvé avec l'ID : " + renduDTO.getIdCompetence());
-//        }
+        // Vérifier que le brief existe
+        BreifDto brief = breifClient.getBriefById(renduDto.getIdBreif());
+        if (brief == null) {
+            throw new RuntimeException("Brief not found");
+        }
 
-
-        Rendu rendu = renduMap.toEntity(renduDTO);
-        rendu.setIdApprenant(renduDTO.getIdApprenant());
-
-//        rendu.setIdCompetence(renduDTO.getIdCompetence());
-
-        return renduMap.toDto(renduRepository.save(rendu));
+        Rendu rendu = renduMap.toEntity(renduDto);
+        rendu.setIdApprenant(renduDto.getIdApprenant());
+        rendu.setIdBreif(brief.getIdBreif());
+        Rendu savedRendu = renduRepository.save(rendu);
+        return renduMap.toDto(savedRendu);
     }
+
     public List<RenduDto> getAllRendu(){
         List<Rendu> rendus = renduRepository.findAll();
         return renduMap.toDtos(rendus);
