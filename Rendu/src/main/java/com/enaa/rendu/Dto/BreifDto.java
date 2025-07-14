@@ -1,18 +1,13 @@
-package com.enaa.breif.Model;
+package com.enaa.rendu.Dto;
 
-import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
 
-@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Breif {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
+public class BreifDto {
     private Long idBreif;
     private String titre;
     private Date dateDepart;

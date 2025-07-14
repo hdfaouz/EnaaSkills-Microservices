@@ -43,7 +43,7 @@ public class ApprenantTest {
         apprenant.setEmail("jean.dupont@email.com");
 
         Apprenant savedApprenant = new Apprenant();
-        savedApprenant.setId(1L);
+//        savedApprenant.setId(1L);
         savedApprenant.setNom("Dupont");
         savedApprenant.setPrenom("Jean");
         savedApprenant.setEmail("jean.dupont@email.com");
@@ -72,13 +72,13 @@ public class ApprenantTest {
     void getAllApprenants() {
         // Données de test
         Apprenant apprenant1 = new Apprenant();
-        apprenant1.setId(1L);
+//        apprenant1.setId(1L);
         apprenant1.setNom("Dupont");
         apprenant1.setPrenom("Jean");
         apprenant1.setEmail("jean.dupont@email.com");
 
         Apprenant apprenant2 = new Apprenant();
-        apprenant2.setId(2L);
+//        apprenant2.setId(2L);
         apprenant2.setNom("Martin");
         apprenant2.setPrenom("Marie");
         apprenant2.setEmail("marie.martin@email.com");

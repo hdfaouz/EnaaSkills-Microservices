@@ -44,7 +44,7 @@ public class BreifTest {
         breif.setDateFin(new Date());
 
         Breif savedBreif = new Breif();
-        savedBreif.setId(1L);
+//        savedBreif.setId(1L);
         savedBreif.setTitre("Test Brief");
         savedBreif.setDateDepart(new Date());
         savedBreif.setDateFin(new Date());
@@ -71,13 +71,13 @@ public class BreifTest {
     void GetAllBreifs() {
         // Arrange
         Breif breif1 = new Breif();
-        breif1.setId(1L);
+//        breif1.setId(1L);
         breif1.setTitre("Brief 1");
         breif1.setDateDepart(new Date());
         breif1.setDateFin(new Date());
 
         Breif breif2 = new Breif();
-        breif2.setId(2L);
+//        breif2.setId(2L);
         breif2.setTitre("Brief 2");
         breif2.setDateDepart(new Date());
         breif2.setDateFin(new Date());

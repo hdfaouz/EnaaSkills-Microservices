@@ -18,7 +18,7 @@ public class RenduControlller {
 
    @PostMapping
     public RenduDto ajouterRendu(@RequestBody RenduDto renduDto){
-        return renduService.ajouterRendu(renduDto);
+        return renduService.save(renduDto);
     }
 
     @GetMapping
