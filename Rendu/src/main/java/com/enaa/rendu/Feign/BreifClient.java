@@ -1,5 +1,5 @@
 package com.enaa.rendu.Feign;
-import com.enaa.breif.Dto.BreifDto;
+import com.enaa.rendu.Dto.BreifDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,7 +8,7 @@ import java.util.List;
 @FeignClient(name = "Breif", url = "http://localhost:8082")
 public interface BreifClient {
     @PostMapping("/brief")
-     BreifDto ajouterBrief(@RequestBody BreifDto breifDto);
+    BreifDto ajouterBrief(@RequestBody BreifDto breifDto);
     @GetMapping
      List<BreifDto> getAllBreifs();
     @PutMapping("/brief/{id}")

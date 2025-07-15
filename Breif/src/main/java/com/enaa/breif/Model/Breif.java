@@ -7,8 +7,7 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Entity
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class Breif {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,6 +16,16 @@ public class Breif {
     private String titre;
     private Date dateDepart;
     private Date dateFin;
+
+    public Breif() {
+    }
+
+    public Breif(Long idBreif, String titre, Date dateDepart, Date dateFin) {
+        this.idBreif = idBreif;
+        this.titre = titre;
+        this.dateDepart = dateDepart;
+        this.dateFin = dateFin;
+    }
 
     public Long getIdBreif() {
         return idBreif;

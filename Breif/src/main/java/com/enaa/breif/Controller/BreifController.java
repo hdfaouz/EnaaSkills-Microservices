@@ -1,6 +1,7 @@
 package com.enaa.breif.Controller;
 
 import com.enaa.breif.Dto.BreifDto;
+import com.enaa.breif.Dto.CompetenceDto;
 import com.enaa.breif.Service.BreifService;
 import org.springframework.web.bind.annotation.*;
 
@@ -37,5 +38,10 @@ public class BreifController {
     @GetMapping("/getById/{id}")
     public BreifDto getById(@PathVariable Long id){
         return breifService.getBreifById(id);
+    }
+
+    @GetMapping("/competence")
+    public List<CompetenceDto> getAllComp(){
+        return breifService.getAllCompetence();
     }
 }

@@ -1,6 +1,8 @@
 package com.enaa.breif.Service;
 
 import com.enaa.breif.Dto.BreifDto;
+import com.enaa.breif.Dto.CompetenceDto;
+import com.enaa.breif.FeignClient.CompetenceClient;
 import com.enaa.breif.Mappers.BreifMap;
 import com.enaa.breif.Model.Breif;
 import com.enaa.breif.Repository.BreifRepository;
@@ -13,10 +15,12 @@ public class BreifService {
 
     private final BreifRepository breifRepository;
     private final BreifMap breifMap;
+    private final CompetenceClient competenceClient;
 
-    public BreifService(BreifRepository breifRepository, BreifMap breifMap) {
+    public BreifService(BreifRepository breifRepository, BreifMap breifMap, CompetenceClient competenceClient) {
         this.breifRepository = breifRepository;
         this.breifMap = breifMap;
+        this.competenceClient = competenceClient;
     }
 
     public BreifDto ajouterBreif(BreifDto breifDto){
@@ -51,6 +55,10 @@ public class BreifService {
         Breif foundBreif =breifRepository.findById(id)
                 .orElseThrow(()-> new RuntimeException("Breif not found"));
         return breifMap.toDto(foundBreif);
+    }
+
+    public List<CompetenceDto> getAllCompetence(){
+        return competenceClient.getAll();
     }
 
 

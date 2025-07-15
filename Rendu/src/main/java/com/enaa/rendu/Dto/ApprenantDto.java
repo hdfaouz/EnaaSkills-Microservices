@@ -1,16 +1,24 @@
 package com.enaa.rendu.Dto;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
-@NoArgsConstructor
-@AllArgsConstructor
-public class ApprenantDto {
+import java.io.Serializable;
+
+public class ApprenantDto implements Serializable {
 
     private Long idApprenant;
     private String nom;
     private String prenom;
     private String email;
+
+    public ApprenantDto(Long idApprenant, String nom, String prenom, String email) {
+        this.idApprenant = idApprenant;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.email = email;
+    }
+
+    public ApprenantDto() {
+    }
 
     public Long getIdApprenant() {
         return idApprenant;
