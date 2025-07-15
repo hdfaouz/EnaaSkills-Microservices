@@ -30,4 +30,9 @@ public class RenduControlller {
     public void deleteRendu(@PathVariable Long id){
         renduService.deleteRendu(id);
     }
+
+    @GetMapping("/brief/{briefid}")
+    public List<Long> getRenduIdsByBriefId(@PathVariable Long briefid){
+        return renduService.getRenduIdsByBriefId(briefid);
+    }
 }

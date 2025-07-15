@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 
@@ -16,6 +17,17 @@ public class Breif {
     private String titre;
     private Date dateDepart;
     private Date dateFin;
+
+    public List<Long> getRendus() {
+        return rendus;
+    }
+
+    public void setRendus(List<Long> rendus) {
+        this.rendus = rendus;
+    }
+
+    @ElementCollection
+    private List<Long> rendus;
 
     public Breif() {
     }

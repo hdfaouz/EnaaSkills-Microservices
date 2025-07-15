@@ -2,7 +2,11 @@ package com.enaa.breif.Controller;
 
 import com.enaa.breif.Dto.BreifDto;
 import com.enaa.breif.Dto.CompetenceDto;
+import com.enaa.breif.FeignClient.RenduClient;
+import com.enaa.breif.Model.Breif;
+import com.enaa.breif.Repository.BreifRepository;
 import com.enaa.breif.Service.BreifService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,9 +16,23 @@ import java.util.List;
 public class BreifController {
 
     private final BreifService breifService;
+    private  final BreifRepository breifRepository;
 
-    public BreifController(BreifService breifService) {
+    public BreifController(BreifService breifService , BreifRepository breifRepository) {
         this.breifService = breifService;
+        this.breifRepository = breifRepository;
+    }
+
+    @Autowired
+    RenduClient renduClient;
+
+
+    @GetMapping("/briefid/idsrendu")
+    public Breif getRendusByBreifIds(Long id){
+        Breif breif = breifRepository.findById(id).orElseThrow(null);
+        List<Long> rendus = renduClient.getRenduIdsByBriefId(id);
+        breif.setRendus(rendus);
+        return breif;
     }
 
     @PostMapping

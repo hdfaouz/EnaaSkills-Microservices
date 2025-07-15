@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @FeignClient(name = "ENAASKills", url = "http://localhost:8080/competence")
+
 public interface CompetenceClient {
 
     @GetMapping

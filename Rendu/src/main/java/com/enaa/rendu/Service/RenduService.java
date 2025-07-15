@@ -30,30 +30,7 @@ public class RenduService {
 
 
     public RenduDto ajouterRendu(RenduDto renduDto) {
-        System.out.println("=== ajouterRendu method called ===");
-        System.out.println("ApprenantClient in method: " + (apprenantClient == null ? "NULL" : "Available"));
-
-        if (apprenantClient == null) {
-            throw new RuntimeException("ApprenantClient is null!");
-        }
-
-        // Vérifier que l'apprenant existe
-        ApprenantDto apprenant = apprenantClient.getApprenantById(renduDto.getIdApprenant());
-        if (apprenant == null) {
-            throw new RuntimeException("Apprenant not found");
-        }
-
-        // Vérifier que le brief existe
-        BreifDto brief = breifClient.getBriefById(renduDto.getIdBreif());
-        if (brief == null) {
-            throw new RuntimeException("Brief not found");
-        }
-
-        Rendu rendu = renduMap.toEntity(renduDto);
-        rendu.setIdApprenant(renduDto.getIdApprenant());
-        rendu.setIdBreif(brief.getIdBreif());
-        Rendu savedRendu = renduRepository.save(rendu);
-        return renduMap.toDto(savedRendu);
+       return renduMap.toDto(renduRepository.save(renduMap.toEntity(renduDto)));
     }
 
     public List<RenduDto> getAllRendu(){
@@ -63,6 +40,10 @@ public class RenduService {
 
     public void deleteRendu(Long id){
         renduRepository.deleteById(id);
+    }
+
+    public List<Long> getRenduIdsByBriefId(Long id){
+        return renduRepository.findIds(id);
     }
 
 
