@@ -32,7 +32,7 @@ public class RenduControlller {
     }
 
     @GetMapping("/brief/{briefid}")
-    public List<Long> getRenduIdsByBriefId(@PathVariable Long briefid){
+    public List<Long> getRenduIdsByBriefId(@PathVariable("briefid") Long briefid){
         return renduService.getRenduIdsByBriefId(briefid);
     }
 }

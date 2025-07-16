@@ -6,9 +6,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
-@FeignClient(name = "Rendu" , url = "http://localhost:8083/competence")
+@FeignClient(name = "Rendu" , url = "http://localhost:8083/rendu/brief")
+
 public interface RenduClient {
 
-    @GetMapping("/rendu/brief/{briefid}")
+    @GetMapping("/{briefid}")
     List<Long> getRenduIdsByBriefId(@PathVariable("briefid") Long briefid);
 }

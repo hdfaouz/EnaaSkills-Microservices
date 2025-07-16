@@ -16,23 +16,17 @@ import java.util.List;
 public class BreifController {
 
     private final BreifService breifService;
-    private  final BreifRepository breifRepository;
 
-    public BreifController(BreifService breifService , BreifRepository breifRepository) {
+    public BreifController(BreifService breifService) {
         this.breifService = breifService;
-        this.breifRepository = breifRepository;
+
     }
 
-    @Autowired
-    RenduClient renduClient;
 
+    @GetMapping("/{id}/idsrendu")
+    public Breif getRendusByBreifIds(@PathVariable Long id){
 
-    @GetMapping("/briefid/idsrendu")
-    public Breif getRendusByBreifIds(Long id){
-        Breif breif = breifRepository.findById(id).orElseThrow(null);
-        List<Long> rendus = renduClient.getRenduIdsByBriefId(id);
-        breif.setRendus(rendus);
-        return breif;
+        return breifService.getByRenduIds(id);
     }
 
     @PostMapping

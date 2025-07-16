@@ -9,6 +9,6 @@ import java.util.List;
 public interface RenduRepository extends JpaRepository<Rendu,Long> {
 //    List<Rendu> findByIdApprenant(Long idApprenant);
 //    List<Rendu> findByIdBrief(Long idBrief);
-    @Query(value = "select  id from rendu where id_brief = ? " , nativeQuery = true)
+    @Query(value = "select  id from rendu where id_breif = ? " , nativeQuery = true)
     List<Long> findIds(Long idbrief);
 }
