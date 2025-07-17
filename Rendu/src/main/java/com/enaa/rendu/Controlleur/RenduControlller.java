@@ -35,4 +35,9 @@ public class RenduControlller {
     public List<Long> getRenduIdsByBriefId(@PathVariable("briefid") Long briefid){
         return renduService.getRenduIdsByBriefId(briefid);
     }
+
+    @GetMapping("/rendAp/{idApprenant}")
+    public Long getRenduByIdApprenent(@PathVariable Long idApprenant){
+        return renduService.getRenduByIdAPP(idApprenant);
+    }
 }

@@ -44,6 +44,9 @@ public class RenduService {
     public List<Long> getRenduIdsByBriefId(Long id){
         return renduRepository.findIds(id);
     }
+    public Long getRenduByIdAPP(Long idApprenant){
+        return renduRepository.test(idApprenant);
+    }
 
 
 

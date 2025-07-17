@@ -11,4 +11,7 @@ public interface RenduRepository extends JpaRepository<Rendu,Long> {
 //    List<Rendu> findByIdBrief(Long idBrief);
     @Query(value = "select  id from rendu where id_breif = ? " , nativeQuery = true)
     List<Long> findIds(Long idbrief);
+
+    @Query(value = "select count(id) from rendu where id_apprenant=?", nativeQuery = true)
+    Long test(Long idApp);
 }
