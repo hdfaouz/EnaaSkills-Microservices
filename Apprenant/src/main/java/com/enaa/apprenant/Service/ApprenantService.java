@@ -57,9 +57,7 @@ public class ApprenantService {
         return apprenantMap.toDto(foundApprenant);
     }
 
-    public Long getRenduByIdApprenent(Long idApprenant){
-        return renduClient.getRenduByIdApprenent(idApprenant);
-    }
+
 
 
 
