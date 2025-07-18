@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/Breif/pom.xml" />
         <option value="$PROJECT_DIR$/EurikaService/pom.xml" />
         <option value="$PROJECT_DIR$/auth-service/pom.xml" />
+        <option value="$PROJECT_DIR$/api-getway/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
