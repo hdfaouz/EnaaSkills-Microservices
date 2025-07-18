@@ -6,6 +6,8 @@
         <groupId>com.enaa</groupId>
         <artifactId>EnaaSkills2</artifactId>
         <version>1.0-SNAPSHOT</version>
+        <relativePath/>
+
     </parent>
 
     <artifactId>Rendu</artifactId>
