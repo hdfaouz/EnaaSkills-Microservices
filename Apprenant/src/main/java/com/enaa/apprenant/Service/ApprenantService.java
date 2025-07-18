@@ -1,11 +1,9 @@
 package com.enaa.apprenant.Service;
 
 import com.enaa.apprenant.Dto.ApprenantDto;
-import com.enaa.apprenant.FeignClient.RenduClient;
 import com.enaa.apprenant.Mappers.ApprenantMap;
 import com.enaa.apprenant.Model.Apprenant;
 import com.enaa.apprenant.Repositories.ApprenantRepository;
-import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,12 +13,11 @@ public class ApprenantService {
 
     private final ApprenantMap apprenantMap;
     private final ApprenantRepository apprenantRepository;
-    private  final RenduClient renduClient;
 
-    public ApprenantService(ApprenantMap apprenantMap, ApprenantRepository apprenantRepository, RenduClient renduClient) {
+    public ApprenantService(ApprenantMap apprenantMap, ApprenantRepository apprenantRepository) {
         this.apprenantMap = apprenantMap;
         this.apprenantRepository = apprenantRepository;
-        this.renduClient = renduClient;
+
     }
 
     public ApprenantDto ajouterApprenant(ApprenantDto apprenantDto){

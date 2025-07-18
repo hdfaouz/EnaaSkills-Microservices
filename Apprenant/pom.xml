@@ -27,6 +27,12 @@
             <artifactId>mapstruct</artifactId>
         </dependency>
 
+        <!-- Spring Cloud OpenFeign pour communication inter-services -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
         <!-- Spring Cloud LoadBalancer -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
