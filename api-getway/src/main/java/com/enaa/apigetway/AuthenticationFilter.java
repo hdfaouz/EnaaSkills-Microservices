@@ -3,6 +3,7 @@ package com.enaa.apigetway;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import org.apache.commons.codec.digest.HmacUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
@@ -50,6 +51,9 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
         try {
             Claims claims = validateAndParseClaims(token);
 
+            // Generate a signature to prove the request came from the gateway
+            String requestSignature = generateRequestSignature(request, claims);
+
             // Add user information to headers for downstream services
             ServerHttpRequest modifiedRequest = request.mutate()
                     .header("X-User-Id", claims.getSubject())
@@ -64,6 +68,10 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
             return unauthorized(exchange, "Invalid token: " + e.getMessage());
         }
 
+    }
+    private String generateRequestSignature(ServerHttpRequest request, Claims claims) {
+        String dataToSign = claims.getSubject() + "|" + request.getPath() + "|" + System.currentTimeMillis();
+        return HmacUtils.hmacSha256Hex(gatewaySecret, dataToSign);
     }
     private boolean isPublicPath(String path) {
         return publicPaths.stream().anyMatch(path::contains);
