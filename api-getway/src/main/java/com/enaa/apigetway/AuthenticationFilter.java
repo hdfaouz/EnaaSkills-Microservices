@@ -26,6 +26,9 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
     @Value("${jwt.secret}")
     private String jwtSecret;
 
+    @Value("${gateway.secret}")
+    private String gatewaySecret;
+
     private final List<String> publicPaths = Arrays.asList(
             "/auth/login",
             "/auth/register",
@@ -52,6 +55,7 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
                     .header("X-User-Id", claims.getSubject())
                     .header("X-User-Roles", String.join(",", getRoles(claims)))
                     .header("X-User-Email", claims.get("email", String.class))
+                    .header("X-Gateway-Secret", gatewaySecret) // Trust header
                     .build();
 
             return chain.filter(exchange.mutate().request(modifiedRequest).build());
