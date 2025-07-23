@@ -12,12 +12,12 @@ public interface ApprenantClient {
     @PostMapping("/apprenant")
     ApprenantDto create(@RequestBody ApprenantDto dto) ;
 
-    @GetMapping
+    @GetMapping("/all")
      List<ApprenantDto> getAll();
 
     @GetMapping("/apprenant/getById/{id}")
     ApprenantDto getApprenantById(@PathVariable Long id) ;
 
-    @PutMapping("/apprenants/{id}")
+    @PutMapping("/apprenant/{id}")
     ApprenantDto update(@PathVariable Long id, @RequestBody ApprenantDto dto) ;
 }

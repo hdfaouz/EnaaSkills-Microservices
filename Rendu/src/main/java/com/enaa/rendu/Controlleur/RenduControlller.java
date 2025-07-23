@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/rendu")
+
 public class RenduControlller {
 
     private final RenduService  renduService;
@@ -16,12 +16,12 @@ public class RenduControlller {
         this.renduService = renduService;
     }
 
-   @PostMapping
+   @PostMapping("/add")
     public RenduDto ajouterRendu(@RequestBody RenduDto renduDto){
         return renduService.ajouterRendu(renduDto);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<RenduDto> getAll(){
         return renduService.getAllRendu();
     }
