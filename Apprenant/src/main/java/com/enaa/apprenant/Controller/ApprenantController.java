@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/apprenant")
+
 public class ApprenantController {
 
     private final ApprenantService apprenantService;
@@ -16,12 +16,12 @@ public class ApprenantController {
         this.apprenantService = apprenantService;
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public ApprenantDto ajouterApprenant(@RequestBody ApprenantDto apprenantDto){
         return apprenantService.ajouterApprenant(apprenantDto);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<ApprenantDto> getAll(){
         return apprenantService.getAllApprenants();
     }
