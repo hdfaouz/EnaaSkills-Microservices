@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/breif")
+//@RequestMapping("/breif")
 public class BreifController {
 
     private final BreifService breifService;
@@ -29,14 +29,18 @@ public class BreifController {
         return breifService.getByRenduIds(id);
     }
 
-    @PostMapping
+    @PostMapping("/add")
     public BreifDto ajouterBreif(@RequestBody BreifDto breifDto){
         return breifService.ajouterBreif(breifDto);
     }
-    @GetMapping
+
+
+    @GetMapping("/all")
     public List<BreifDto> getAll(){
         return breifService.getAllBreifs();
     }
+
+
     @PutMapping("/{id}")
     public BreifDto update(@PathVariable Long id, @RequestBody BreifDto breifDto){
         return breifService.updat(id,breifDto);
