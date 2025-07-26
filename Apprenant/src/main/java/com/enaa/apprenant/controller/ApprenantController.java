@@ -1,4 +1,4 @@
-package com.enaa.apprenant.Controller;
+package com.enaa.apprenant.controller;
 
 import com.enaa.apprenant.dto.ApprenantDto;
 import com.enaa.apprenant.Service.ApprenantService;

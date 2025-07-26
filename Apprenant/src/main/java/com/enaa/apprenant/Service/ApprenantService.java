@@ -2,8 +2,8 @@ package com.enaa.apprenant.Service;
 
 import com.enaa.apprenant.dto.ApprenantDto;
 import com.enaa.apprenant.Mappers.ApprenantMap;
-import com.enaa.apprenant.Model.Apprenant;
-import com.enaa.apprenant.Repositories.ApprenantRepository;
+import com.enaa.apprenant.model.Apprenant;
+import com.enaa.apprenant.repositories.ApprenantRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
