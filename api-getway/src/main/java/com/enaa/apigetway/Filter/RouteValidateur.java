@@ -1,4 +1,4 @@
-package com.enaa.apigetway.filter;
+package com.enaa.apigetway.Filter;
 
 import org.springframework.http.server.reactive.ServerHttpRequest;
 import org.springframework.stereotype.Component;
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 @Component
-public class routevalidateur {
+public class RouteValidateur {
 
     public static final List<String> openApiEndpoints = List.of(
             "/auth/register",

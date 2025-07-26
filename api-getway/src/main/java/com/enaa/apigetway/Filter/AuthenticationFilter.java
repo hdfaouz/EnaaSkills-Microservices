@@ -1,4 +1,4 @@
-package com.enaa.apigetway.filter;
+package com.enaa.apigetway.Filter;
 
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
@@ -7,12 +7,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Component
-public class authenticationfilter extends AbstractGatewayFilterFactory<authenticationfilter.Config> {
+public class AuthenticationFilter extends AbstractGatewayFilterFactory<AuthenticationFilter.Config> {
 
-    private final routevalidateur validator;
+    private final RouteValidateur validator;
     private final WebClient.Builder webClientBuilder;
 
-    public authenticationfilter(routevalidateur validator, WebClient.Builder webClientBuilder) {
+    public AuthenticationFilter(RouteValidateur validator, WebClient.Builder webClientBuilder) {
         super(Config.class);
         this.validator = validator;
         this.webClientBuilder = webClientBuilder;
