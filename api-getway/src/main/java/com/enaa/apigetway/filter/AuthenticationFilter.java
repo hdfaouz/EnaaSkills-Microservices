@@ -1,4 +1,4 @@
-package com.enaa.apigetway.Filter;
+package com.enaa.apigetway.filter;
 
 import org.springframework.cloud.gateway.filter.GatewayFilter;
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
