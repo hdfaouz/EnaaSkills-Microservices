@@ -1,6 +1,6 @@
 package com.enaa.apprenant.Mappers;
 
-import com.enaa.apprenant.Dto.ApprenantDto;
+import com.enaa.apprenant.dto.ApprenantDto;
 import com.enaa.apprenant.Model.Apprenant;
 import org.mapstruct.Mapper;
 

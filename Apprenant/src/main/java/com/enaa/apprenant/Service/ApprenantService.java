@@ -1,6 +1,6 @@
 package com.enaa.apprenant.Service;
 
-import com.enaa.apprenant.Dto.ApprenantDto;
+import com.enaa.apprenant.dto.ApprenantDto;
 import com.enaa.apprenant.Mappers.ApprenantMap;
 import com.enaa.apprenant.Model.Apprenant;
 import com.enaa.apprenant.Repositories.ApprenantRepository;
