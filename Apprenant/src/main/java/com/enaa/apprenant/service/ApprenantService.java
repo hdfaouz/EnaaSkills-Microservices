@@ -1,4 +1,4 @@
-package com.enaa.apprenant.Service;
+package com.enaa.apprenant.service;
 
 import com.enaa.apprenant.dto.ApprenantDto;
 import com.enaa.apprenant.Mappers.ApprenantMap;

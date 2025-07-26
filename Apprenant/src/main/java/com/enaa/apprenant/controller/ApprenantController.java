@@ -1,7 +1,7 @@
 package com.enaa.apprenant.controller;
 
 import com.enaa.apprenant.dto.ApprenantDto;
-import com.enaa.apprenant.Service.ApprenantService;
+import com.enaa.apprenant.service.ApprenantService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
