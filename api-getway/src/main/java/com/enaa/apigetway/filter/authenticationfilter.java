@@ -7,12 +7,12 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 
 @Component
-public class AuthenticationFilter extends AbstractGatewayFilterFactory<AuthenticationFilter.Config> {
+public class authenticationfilter extends AbstractGatewayFilterFactory<authenticationfilter.Config> {
 
-    private final RouteValidateur validator;
+    private final routevalidateur validator;
     private final WebClient.Builder webClientBuilder;
 
-    public AuthenticationFilter(RouteValidateur validator, WebClient.Builder webClientBuilder) {
+    public authenticationfilter(routevalidateur validator, WebClient.Builder webClientBuilder) {
         super(Config.class);
         this.validator = validator;
         this.webClientBuilder = webClientBuilder;

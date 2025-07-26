@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 @Component
-public class RouteValidateur {
+public class routevalidateur {
 
     public static final List<String> openApiEndpoints = List.of(
             "/auth/register",
