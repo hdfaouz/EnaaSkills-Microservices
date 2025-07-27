@@ -32,9 +32,9 @@
         <module>Apprenant</module>
         <module>api-getway</module>
         <module>Rendu</module>       <!-- Ajoutez d'autres modules ici -->
-        <module>Breif</module>     </modules>
-
-    <!-- Gestion des versions des dépendances communes -->
+        <module>Breif</module>
+        <module>auth-service</module>
+    </modules>    <!-- Gestion des versions des dépendances communes -->
     <dependencyManagement>
         <dependencies>
             <!-- Spring Cloud BOM -->
