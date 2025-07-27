@@ -1,6 +1,6 @@
 package com.enaa.rendu.Feign;
 
-import com.enaa.rendu.Dto.ApprenantDto;
+import com.enaa.rendu.dto.Apprenantdto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,14 +10,14 @@ import java.util.List;
 public interface ApprenantClient {
 
     @PostMapping("/apprenant")
-    ApprenantDto create(@RequestBody ApprenantDto dto) ;
+    Apprenantdto create(@RequestBody Apprenantdto dto) ;
 
     @GetMapping
-     List<ApprenantDto> getAll();
+     List<Apprenantdto> getAll();
 
     @GetMapping("/apprenant/getById/{id}")
-    ApprenantDto getApprenantById(@PathVariable Long id) ;
+    Apprenantdto getApprenantById(@PathVariable Long id) ;
 
     @PutMapping("/apprenants/{id}")
-    ApprenantDto update(@PathVariable Long id, @RequestBody ApprenantDto dto) ;
+    Apprenantdto update(@PathVariable Long id, @RequestBody Apprenantdto dto) ;
 }

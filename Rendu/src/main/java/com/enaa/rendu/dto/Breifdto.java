@@ -1,22 +1,22 @@
-package com.enaa.rendu.Dto;
+package com.enaa.rendu.dto;
 
 import java.io.Serializable;
 import java.util.Date;
 
-public class BreifDto implements Serializable {
+public class Breifdto implements Serializable {
     private Long idBreif;
     private String titre;
     private Date dateDepart;
     private Date dateFin;
 
-    public BreifDto(Long idBreif, String titre, Date dateDepart, Date dateFin) {
+    public Breifdto(Long idBreif, String titre, Date dateDepart, Date dateFin) {
         this.idBreif = idBreif;
         this.titre = titre;
         this.dateDepart = dateDepart;
         this.dateFin = dateFin;
     }
 
-    public BreifDto() {
+    public Breifdto() {
     }
 
     public Long getIdBreif() {

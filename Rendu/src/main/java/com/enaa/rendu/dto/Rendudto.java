@@ -1,21 +1,21 @@
-package com.enaa.rendu.Dto;
+package com.enaa.rendu.dto;
 
 
 import java.io.Serializable;
 import java.util.Date;
 
 
-public class RenduDto implements Serializable {
+public class Rendudto implements Serializable {
 
     private Date DateDepot;
     private String contenu;
     private Long idApprenant;
     private Long idBreif;
 
-    public RenduDto() {
+    public Rendudto() {
     }
 
-    public RenduDto(Date dateDepot, String contenu, Long idApprenant, Long idBreif) {
+    public Rendudto(Date dateDepot, String contenu, Long idApprenant, Long idBreif) {
         DateDepot = dateDepot;
         this.contenu = contenu;
         this.idApprenant = idApprenant;
