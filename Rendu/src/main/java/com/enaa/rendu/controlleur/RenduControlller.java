@@ -1,4 +1,4 @@
-package com.enaa.rendu.Controlleur;
+package com.enaa.rendu.controlleur;
 
 import com.enaa.rendu.Dto.RenduDto;
 import com.enaa.rendu.Service.RenduService;
