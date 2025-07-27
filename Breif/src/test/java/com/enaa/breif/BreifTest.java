@@ -1,6 +1,6 @@
 package com.enaa.breif;
 
-import com.enaa.breif.Dto.BreifDto;
+import com.enaa.breif.dto.BreifDto;
 import com.enaa.breif.Mappers.BreifMap;
 import com.enaa.breif.Model.Breif;
 import com.enaa.breif.Repository.BreifRepository;

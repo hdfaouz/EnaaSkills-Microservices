@@ -1,6 +1,6 @@
 package com.enaa.breif.FeignClient;
 
-import com.enaa.breif.Dto.CompetenceDto;
+import com.enaa.breif.dto.CompetenceDto;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 

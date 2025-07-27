@@ -1,4 +1,4 @@
-package com.enaa.breif.Dto;
+package com.enaa.breif.dto;
 
 public class CompetenceDto {
     private String nom;

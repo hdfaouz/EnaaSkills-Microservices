@@ -1,7 +1,7 @@
 package com.enaa.breif.Service;
 
-import com.enaa.breif.Dto.BreifDto;
-import com.enaa.breif.Dto.CompetenceDto;
+import com.enaa.breif.dto.BreifDto;
+import com.enaa.breif.dto.CompetenceDto;
 import com.enaa.breif.FeignClient.CompetenceClient;
 import com.enaa.breif.FeignClient.RenduClient;
 import com.enaa.breif.Mappers.BreifMap;
