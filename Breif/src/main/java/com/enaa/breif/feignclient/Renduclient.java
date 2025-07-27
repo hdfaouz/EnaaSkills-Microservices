@@ -8,7 +8,7 @@ import java.util.List;
 
 @FeignClient(name = "Rendu" , url = "http://localhost:8083/rendu/brief")
 
-public interface RenduClient {
+public interface Renduclient {
 
     @GetMapping("/{briefid}")
     List<Long> getRenduIdsByBriefId(@PathVariable("briefid") Long briefid);
