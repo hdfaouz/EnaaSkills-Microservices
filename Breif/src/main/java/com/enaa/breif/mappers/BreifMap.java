@@ -1,7 +1,7 @@
 package com.enaa.breif.mappers;
 
 import com.enaa.breif.dto.BreifDto;
-import com.enaa.breif.Model.Breif;
+import com.enaa.breif.model.Breif;
 import org.mapstruct.Mapper;
 
 import java.util.List;

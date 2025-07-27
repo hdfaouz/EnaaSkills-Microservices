@@ -2,7 +2,7 @@ package com.enaa.breif.controller;
 
 import com.enaa.breif.dto.BreifDto;
 import com.enaa.breif.dto.Competencedto;
-import com.enaa.breif.Model.Breif;
+import com.enaa.breif.model.Breif;
 import com.enaa.breif.Service.BreifService;
 import org.springframework.web.bind.annotation.*;
 

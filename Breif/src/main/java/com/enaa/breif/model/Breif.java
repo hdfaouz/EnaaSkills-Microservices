@@ -1,8 +1,6 @@
-package com.enaa.breif.Model;
+package com.enaa.breif.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 import java.util.Date;
 import java.util.List;
