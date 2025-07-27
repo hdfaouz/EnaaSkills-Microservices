@@ -1,4 +1,4 @@
-package com.enaa.breif.Service;
+package com.enaa.breif.service;
 
 import com.enaa.breif.dto.BreifDto;
 import com.enaa.breif.dto.Competencedto;

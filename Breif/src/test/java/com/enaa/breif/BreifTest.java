@@ -4,7 +4,7 @@ import com.enaa.breif.dto.BreifDto;
 import com.enaa.breif.mappers.BreifMap;
 import com.enaa.breif.model.Breif;
 import com.enaa.breif.repository.BreifRepository;
-import com.enaa.breif.Service.BreifService;
+import com.enaa.breif.service.BreifService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
