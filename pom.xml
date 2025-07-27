@@ -32,7 +32,7 @@
         <module>Apprenant</module>
         <module>api-getway</module>
         <module>Rendu</module>       <!-- Ajoutez d'autres modules ici -->
-    </modules>
+        <module>Breif</module>     </modules>
 
     <!-- Gestion des versions des dépendances communes -->
     <dependencyManagement>
