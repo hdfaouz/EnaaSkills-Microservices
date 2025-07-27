@@ -31,7 +31,7 @@
         <module>EurikaService</module>
         <module>Apprenant</module>
         <module>api-getway</module>
-        <!-- Ajoutez d'autres modules ici -->
+        <module>Rendu</module>       <!-- Ajoutez d'autres modules ici -->
     </modules>
 
     <!-- Gestion des versions des dépendances communes -->
