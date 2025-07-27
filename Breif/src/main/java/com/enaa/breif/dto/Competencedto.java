@@ -1,13 +1,13 @@
 package com.enaa.breif.dto;
 
-public class CompetenceDto {
+public class Competencedto {
     private String nom;
     private boolean statutAcquise;
 
-    public CompetenceDto() {
+    public Competencedto() {
     }
 
-    public CompetenceDto(String nom, boolean statutAcquise) {
+    public Competencedto(String nom, boolean statutAcquise) {
         this.nom = nom;
         this.statutAcquise = statutAcquise;
     }
