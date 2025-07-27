@@ -2,8 +2,8 @@ package com.enaa.breif.Service;
 
 import com.enaa.breif.dto.BreifDto;
 import com.enaa.breif.dto.Competencedto;
-import com.enaa.breif.FeignClient.CompetenceClient;
-import com.enaa.breif.FeignClient.RenduClient;
+import com.enaa.breif.feignclient.Competenceclient;
+import com.enaa.breif.feignclient.RenduClient;
 import com.enaa.breif.Mappers.BreifMap;
 import com.enaa.breif.Model.Breif;
 import com.enaa.breif.Repository.BreifRepository;
@@ -16,10 +16,10 @@ public class BreifService {
 
     private final BreifRepository breifRepository;
     private final BreifMap breifMap;
-    private final CompetenceClient competenceClient;
+    private final Competenceclient competenceClient;
     private final RenduClient renduClient;
 
-    public BreifService(BreifRepository breifRepository, BreifMap breifMap, CompetenceClient competenceClient, RenduClient renduClient) {
+    public BreifService(BreifRepository breifRepository, BreifMap breifMap, Competenceclient competenceClient, RenduClient renduClient) {
         this.breifRepository = breifRepository;
         this.breifMap = breifMap;
         this.competenceClient = competenceClient;
