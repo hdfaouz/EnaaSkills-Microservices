@@ -4,7 +4,7 @@ import com.enaa.breif.dto.BreifDto;
 import com.enaa.breif.dto.Competencedto;
 import com.enaa.breif.feignclient.Competenceclient;
 import com.enaa.breif.feignclient.Renduclient;
-import com.enaa.breif.Mappers.BreifMap;
+import com.enaa.breif.mappers.BreifMap;
 import com.enaa.breif.Model.Breif;
 import com.enaa.breif.Repository.BreifRepository;
 import org.springframework.stereotype.Service;
