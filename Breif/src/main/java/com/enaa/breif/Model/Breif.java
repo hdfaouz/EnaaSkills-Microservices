@@ -8,7 +8,8 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-
+@AllArgsConstructor
+@NoArgsConstructor
 public class Breif {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,9 +29,9 @@ public class Breif {
 
     @ElementCollection
     private List<Long> rendus;
-
-    public Breif() {
-    }
+//
+//    public Breif() {
+//    }
 
     public Breif(Long idBreif, String titre, Date dateDepart, Date dateFin) {
         this.idBreif = idBreif;
