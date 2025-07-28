@@ -1,7 +1,7 @@
 package com.enaa.rendu.Service;
 
 
-import com.enaa.rendu.dto.Rendudto;
+import com.enaa.rendu.Dto.RenduDto;
 import com.enaa.rendu.Feign.ApprenantClient;
 import com.enaa.rendu.Feign.BreifClient;
 import com.enaa.rendu.Mappers.RenduMap;
@@ -28,11 +28,14 @@ public class RenduService {
     private BreifClient breifClient;
 
 
-    public Rendudto ajouterRendu(Rendudto renduDto) {
+    private RenduDto renduDto;
+
+
+    public RenduDto ajouterRendu(RenduDto renduDto) {
        return renduMap.toDto(renduRepository.save(renduMap.toEntity(renduDto)));
     }
 
-    public List<Rendudto> getAllRendu(){
+    public List<RenduDto> getAllRendu(){
         List<Rendu> rendus = renduRepository.findAll();
         return renduMap.toDtos(rendus);
     }

@@ -1,22 +1,42 @@
-package com.enaa.rendu.dto;
+package com.enaa.breif.Model;
 
-import java.io.Serializable;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import java.util.Date;
+import java.util.List;
 
-public class Breifdto implements Serializable {
+@Entity
+
+public class Breif {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false)
     private Long idBreif;
     private String titre;
     private Date dateDepart;
     private Date dateFin;
 
-    public Breifdto(Long idBreif, String titre, Date dateDepart, Date dateFin) {
+    public List<Long> getRendus() {
+        return rendus;
+    }
+
+    public void setRendus(List<Long> rendus) {
+        this.rendus = rendus;
+    }
+
+    @ElementCollection
+    private List<Long> rendus;
+
+    public Breif() {
+    }
+
+    public Breif(Long idBreif, String titre, Date dateDepart, Date dateFin) {
         this.idBreif = idBreif;
         this.titre = titre;
         this.dateDepart = dateDepart;
         this.dateFin = dateFin;
-    }
-
-    public Breifdto() {
     }
 
     public Long getIdBreif() {

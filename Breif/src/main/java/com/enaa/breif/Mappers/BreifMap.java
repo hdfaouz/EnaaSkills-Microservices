@@ -1,6 +1,6 @@
-package com.enaa.breif.mappers;
+package com.enaa.breif.Mappers;
 
-import com.enaa.breif.dto.BreifDto;
+import com.enaa.breif.Dto.BreifDto;
 import com.enaa.breif.model.Breif;
 import org.mapstruct.Mapper;
 

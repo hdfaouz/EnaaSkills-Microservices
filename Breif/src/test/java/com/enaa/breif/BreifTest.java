@@ -1,10 +1,10 @@
 package com.enaa.breif;
 
-import com.enaa.breif.dto.BreifDto;
-import com.enaa.breif.mappers.BreifMap;
-import com.enaa.breif.model.Breif;
-import com.enaa.breif.repository.BreifRepository;
-import com.enaa.breif.service.BreifService;
+import com.enaa.breif.Dto.BreifDto;
+import com.enaa.breif.Mappers.BreifMap;
+import com.enaa.breif.Model.Breif;
+import com.enaa.breif.Repository.BreifRepository;
+import com.enaa.breif.Service.BreifService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
- class BreifTest {
+public class BreifTest {
     @Mock
     private BreifRepository breifRepository;
 
@@ -54,9 +54,6 @@ import static org.mockito.Mockito.when;
         expectedDto.setDateDepart(new Date());
         expectedDto.setDateFin(new Date());
 
-        when(breifMap.toEntity(breifDto)).thenReturn(breif);
-        when(breifRepository.save(breif)).thenReturn(savedBreif);
-        when(breifMap.toDto(savedBreif)).thenReturn(expectedDto);
 
         // Act
         BreifDto result = breifService.ajouterBreif(breifDto);
@@ -96,8 +93,7 @@ import static org.mockito.Mockito.when;
 
         List<BreifDto> expectedDtos = Arrays.asList(breifDto1, breifDto2);
 
-        when(breifRepository.findAll()).thenReturn(breifs);
-        when(breifMap.toDtos(breifs)).thenReturn(expectedDtos);
+
 
         // Act
         List<BreifDto> result = breifService.getAllBreifs();

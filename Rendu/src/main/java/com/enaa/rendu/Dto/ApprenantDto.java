@@ -1,23 +1,23 @@
-package com.enaa.rendu.dto;
+package com.enaa.rendu.Dto;
 
 
 import java.io.Serializable;
 
-public class Apprenantdto implements Serializable {
+public class ApprenantDto implements Serializable {
 
     private Long idApprenant;
     private String nom;
     private String prenom;
     private String email;
 
-    public Apprenantdto(Long idApprenant, String nom, String prenom, String email) {
+    public ApprenantDto(Long idApprenant, String nom, String prenom, String email) {
         this.idApprenant = idApprenant;
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
     }
 
-    public Apprenantdto() {
+    public ApprenantDto() {
     }
 
     public Long getIdApprenant() {

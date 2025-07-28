@@ -1,6 +1,6 @@
-package com.enaa.rendu.controlleur;
+package com.enaa.rendu.Controlleur;
 
-import com.enaa.rendu.dto.Rendudto;
+import com.enaa.rendu.Dto.RenduDto;
 import com.enaa.rendu.Service.RenduService;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,12 +17,12 @@ public class RenduControlller {
     }
 
    @PostMapping
-    public Rendudto ajouterRendu(@RequestBody Rendudto renduDto){
+    public RenduDto ajouterRendu(@RequestBody RenduDto renduDto){
         return renduService.ajouterRendu(renduDto);
     }
 
     @GetMapping
-    public List<Rendudto> getAll(){
+    public List<RenduDto> getAll(){
         return renduService.getAllRendu();
     }
 

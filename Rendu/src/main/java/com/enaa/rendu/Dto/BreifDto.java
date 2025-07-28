@@ -1,18 +1,23 @@
-package com.enaa.breif.dto;
+package com.enaa.rendu.Dto;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
+import java.io.Serializable;
 import java.util.Date;
 
-
-public class BreifDto {
-
+public class BreifDto implements Serializable {
     private Long idBreif;
-
     private String titre;
     private Date dateDepart;
     private Date dateFin;
+
+    public BreifDto(Long idBreif, String titre, Date dateDepart, Date dateFin) {
+        this.idBreif = idBreif;
+        this.titre = titre;
+        this.dateDepart = dateDepart;
+        this.dateFin = dateFin;
+    }
+
+    public BreifDto() {
+    }
 
     public Long getIdBreif() {
         return idBreif;
