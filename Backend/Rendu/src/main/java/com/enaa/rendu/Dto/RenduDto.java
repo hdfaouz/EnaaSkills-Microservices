@@ -1,10 +1,13 @@
 package com.enaa.rendu.Dto;
 
 
+import lombok.Getter;
+
 import java.io.Serializable;
 import java.util.Date;
 
 
+@Getter
 public class RenduDto implements Serializable {
 
     private Date DateDepot;
@@ -22,32 +25,16 @@ public class RenduDto implements Serializable {
         this.idBreif = idBreif;
     }
 
-    public Date getDateDepot() {
-        return DateDepot;
-    }
-
     public void setDateDepot(Date dateDepot) {
         DateDepot = dateDepot;
-    }
-
-    public String getContenu() {
-        return contenu;
     }
 
     public void setContenu(String contenu) {
         this.contenu = contenu;
     }
 
-    public Long getIdApprenant() {
-        return idApprenant;
-    }
-
     public void setIdApprenant(Long idApprenant) {
         this.idApprenant = idApprenant;
-    }
-
-    public Long getIdBreif() {
-        return idBreif;
     }
 
     public void setIdBreif(Long idBreif) {

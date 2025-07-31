@@ -31,6 +31,9 @@ public class RenduService {
     private BreifClient breifClient;
 
 
+    private RenduDto renduDto;
+
+
     public RenduDto ajouterRendu(RenduDto renduDto) {
        return renduMap.toDto(renduRepository.save(renduMap.toEntity(renduDto)));
     }

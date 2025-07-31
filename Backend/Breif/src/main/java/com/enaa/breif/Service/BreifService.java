@@ -1,7 +1,7 @@
 package com.enaa.breif.Service;
 
 import com.enaa.breif.Dto.BreifDto;
-import com.enaa.breif.Dto.CompetenceDto;
+import com.enaa.breif.Dto.Competencedto;
 import com.enaa.breif.FeignClient.CompetenceClient;
 import com.enaa.breif.FeignClient.RenduClient;
 import com.enaa.breif.Mappers.BreifMap;
@@ -60,7 +60,7 @@ public class BreifService {
         return breifMap.toDto(foundBreif);
     }
 
-    public List<CompetenceDto> getAllCompetence(){
+    public List<Competencedto> getAllCompetence(){
         return competenceClient.getAll();
     }
 

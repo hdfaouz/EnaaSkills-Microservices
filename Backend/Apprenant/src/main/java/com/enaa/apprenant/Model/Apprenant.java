@@ -1,4 +1,4 @@
-package com.enaa.apprenant.Model;
+package com.enaa.apprenant.model;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

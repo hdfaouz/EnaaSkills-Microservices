@@ -1,7 +1,7 @@
-package com.enaa.apprenant.Mappers;
+package com.enaa.apprenant.mappers;
 
-import com.enaa.apprenant.Dto.ApprenantDto;
-import com.enaa.apprenant.Model.Apprenant;
+import com.enaa.apprenant.dto.ApprenantDto;
+import com.enaa.apprenant.model.Apprenant;
 import org.mapstruct.Mapper;
 
 import java.util.List;

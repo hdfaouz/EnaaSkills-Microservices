@@ -1,10 +1,10 @@
 package com.enaa.apprenant;
 
-import com.enaa.apprenant.Dto.ApprenantDto;
-import com.enaa.apprenant.Mappers.ApprenantMap;
-import com.enaa.apprenant.Model.Apprenant;
-import com.enaa.apprenant.Repositories.ApprenantRepository;
-import com.enaa.apprenant.Service.ApprenantService;
+import com.enaa.apprenant.dto.ApprenantDto;
+import com.enaa.apprenant.mappers.ApprenantMap;
+import com.enaa.apprenant.model.Apprenant;
+import com.enaa.apprenant.repositories.ApprenantRepository;
+import com.enaa.apprenant.service.ApprenantService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -19,7 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
-public class ApprenantTest {
+ class ApprenantTest {
     @Mock
     private ApprenantRepository apprenantRepository;
 
@@ -31,7 +31,7 @@ public class ApprenantTest {
 
     @Test
     void ajouterApprenant() {
-        // Données de test
+
         ApprenantDto apprenantDto = new ApprenantDto();
         apprenantDto.setNom("Dupont");
         apprenantDto.setPrenom("Jean");
@@ -43,7 +43,7 @@ public class ApprenantTest {
         apprenant.setEmail("jean.dupont@email.com");
 
         Apprenant savedApprenant = new Apprenant();
-//        savedApprenant.setId(1L);
+
         savedApprenant.setNom("Dupont");
         savedApprenant.setPrenom("Jean");
         savedApprenant.setEmail("jean.dupont@email.com");
@@ -54,15 +54,15 @@ public class ApprenantTest {
         expectedDto.setPrenom("Jean");
         expectedDto.setEmail("jean.dupont@email.com");
 
-        // Configuration des mocks
+
         when(apprenantMap.toEntity(apprenantDto)).thenReturn(apprenant);
         when(apprenantRepository.save(apprenant)).thenReturn(savedApprenant);
         when(apprenantMap.toDto(savedApprenant)).thenReturn(expectedDto);
 
-        // Exécution
+
         ApprenantDto result = apprenantService.ajouterApprenant(apprenantDto);
 
-        // Vérifications
+
         assertNotNull(result);
         assertEquals("Dupont", result.getNom());
         assertEquals("Jean", result.getPrenom());
@@ -70,15 +70,15 @@ public class ApprenantTest {
     }
     @Test
     void getAllApprenants() {
-        // Données de test
+
         Apprenant apprenant1 = new Apprenant();
-//        apprenant1.setId(1L);
+
         apprenant1.setNom("Dupont");
         apprenant1.setPrenom("Jean");
         apprenant1.setEmail("jean.dupont@email.com");
 
         Apprenant apprenant2 = new Apprenant();
-//        apprenant2.setId(2L);
+
         apprenant2.setNom("Martin");
         apprenant2.setPrenom("Marie");
         apprenant2.setEmail("marie.martin@email.com");
@@ -97,14 +97,14 @@ public class ApprenantTest {
 
         List<ApprenantDto> expectedDtos = Arrays.asList(dto1, dto2);
 
-        // Configuration des mocks
+
         when(apprenantRepository.findAll()).thenReturn(apprenants);
         when(apprenantMap.toDtos(apprenants)).thenReturn(expectedDtos);
 
-        // Exécution
+
         List<ApprenantDto> result = apprenantService.getAllApprenants();
 
-        // Vérifications
+
         assertNotNull(result);
         assertEquals("Dupont", result.get(0).getNom());
         assertEquals("Jean", result.get(0).getPrenom());

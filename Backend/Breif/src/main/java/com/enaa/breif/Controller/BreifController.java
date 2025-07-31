@@ -1,12 +1,9 @@
 package com.enaa.breif.Controller;
 
 import com.enaa.breif.Dto.BreifDto;
-import com.enaa.breif.Dto.CompetenceDto;
-import com.enaa.breif.FeignClient.RenduClient;
+import com.enaa.breif.Dto.Competencedto;
 import com.enaa.breif.Model.Breif;
-import com.enaa.breif.Repository.BreifRepository;
 import com.enaa.breif.Service.BreifService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -57,7 +54,7 @@ public class BreifController {
     }
 
     @GetMapping("/competence")
-    public List<CompetenceDto> getAllComp(){
+    public List<Competencedto> getAllComp(){
         return breifService.getAllCompetence();
     }
 }

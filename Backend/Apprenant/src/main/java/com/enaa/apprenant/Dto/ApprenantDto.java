@@ -1,4 +1,4 @@
-package com.enaa.apprenant.Dto;
+package com.enaa.apprenant.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;

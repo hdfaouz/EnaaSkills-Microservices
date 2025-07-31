@@ -54,9 +54,6 @@ public class BreifTest {
         expectedDto.setDateDepart(new Date());
         expectedDto.setDateFin(new Date());
 
-        when(breifMap.toEntity(breifDto)).thenReturn(breif);
-        when(breifRepository.save(breif)).thenReturn(savedBreif);
-        when(breifMap.toDto(savedBreif)).thenReturn(expectedDto);
 
         // Act
         BreifDto result = breifService.ajouterBreif(breifDto);
@@ -96,8 +93,7 @@ public class BreifTest {
 
         List<BreifDto> expectedDtos = Arrays.asList(breifDto1, breifDto2);
 
-        when(breifRepository.findAll()).thenReturn(breifs);
-        when(breifMap.toDtos(breifs)).thenReturn(expectedDtos);
+
 
         // Act
         List<BreifDto> result = breifService.getAllBreifs();

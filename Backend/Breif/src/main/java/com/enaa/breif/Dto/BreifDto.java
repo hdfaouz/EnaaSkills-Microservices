@@ -1,13 +1,8 @@
 package com.enaa.breif.Dto;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
 import java.util.Date;
-import java.util.function.LongToIntFunction;
 
-@NoArgsConstructor
-@AllArgsConstructor
+
 public class BreifDto {
 
     private Long idBreif;
